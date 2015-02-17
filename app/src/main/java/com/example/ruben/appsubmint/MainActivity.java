@@ -11,7 +11,8 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
-    static String NOM_USUARI = "LaMevaKey"; //DEFINIMOS la key para la entrada en mi diccionario
+    final public static String NOM_USUARI = "com.example.ruben.appsubmint.LaMevaKey"; // es bueno definir el nombre de la variable para poder diferenciara entre otras app
+    //DEFINIMOS la key para la entrada en mi diccionario, con el final hacemos que el valor no se pueda modificar en ningun sitio y es publica para todos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
