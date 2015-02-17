@@ -11,6 +11,8 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
+    static String NOM_USUARI = "LaMevaKey"; //DEFINIMOS la key para la entrada en mi diccionario
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +55,7 @@ public class MainActivity extends Activity {
 
         Intent newView = new Intent(this, MainActivity2.class); //preparamos la view que queremos lanzar
 
-        newView.putExtra("LaMevaKey",myName ); //creamos el diccionario en la view con un "id" + con el contenido del el string de la variable
+        newView.putExtra(NOM_USUARI,myName ); //creamos el diccionario en la view con un "id" definida anteriormente  + con el contenido del el string de la variable
 
         startActivity(newView); //abrimos la nueva view, mirar mainactivity2.java funcion onCreate
 

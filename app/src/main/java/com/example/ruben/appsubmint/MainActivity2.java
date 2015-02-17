@@ -17,18 +17,15 @@ public class MainActivity2 extends Activity {
 
         Intent mi_super_intento = getIntent();//recuperarmos el diccionario
 
-        String nom = mi_super_intento.getStringExtra("LaMevaKey"); // leemos la key y asignamos si valor a un objeto string
+        String nom = mi_super_intento.getStringExtra(MainActivity.NOM_USUARI); // leemos del dicionario la key y asignamos el valor a un objeto string
 
-        TextView nouView = new TextView(this);
-        nouView.setTextSize(40.0f);
-        nouView.setText(nom);
+        setContentView(R.layout.activity_main_activity2); // creamos la vie
+        
+        TextView elMeuView = (TextView) findViewById(R.id.text);
 
-
-        setContentView(nouView);
-
+        elMeuView.setText(nom);
 
 
-        //setContentView(R.layout.activity_main_activity2);
     }
 
 
