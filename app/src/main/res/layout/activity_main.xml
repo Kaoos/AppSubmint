@@ -13,9 +13,14 @@
         android:hint="@string/Text_hint"
         android:id="@+id/text"/>
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Button_text"/>
+        android:text="@string/Button_text"
+        android:onClick="SendButton"
+
+        />
+
 
 </LinearLayout>
