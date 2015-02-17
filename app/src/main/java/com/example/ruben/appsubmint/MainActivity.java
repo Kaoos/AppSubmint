@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class MainActivity extends Activity {
@@ -43,10 +44,18 @@ public class MainActivity extends Activity {
 
     //iniciamos la funcion del boton
 
-    public void SendButton (View myText){
-        Intent i = new Intent(this, MainActivity2.class);
+    public void EnviarTEXT (View myText){
 
-        startActivity(i);
+        EditText nom = (EditText) findViewById(R.id.text);   //nom es el nombre de la variable que recive los datos del EditText, busca en funcion del id dentro de su bbdd el id.text
+        // el (editText) hace que reconozca la view como un view de texto
+
+        String myName = nom.getText().toString(); // en la variable myName tenemos lo que ha introducido el usuario y lo trasformamos a un string
+
+        Intent newView = new Intent(this, MainActivity2.class); //preparamos la view que queremos lanzar
+
+        newView.putExtra("LaMevaKey",myName ); //creamos el diccionario en la view con un "id" + con el contenido del el string de la variable
+
+        startActivity(newView); //abrimos la nueva view, mirar mainactivity2.java funcion onCreate
 
     }
 }

@@ -1,10 +1,12 @@
 package com.example.ruben.appsubmint;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity2 extends Activity {
@@ -12,7 +14,21 @@ public class MainActivity2 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activity2);
+
+        Intent mi_super_intento = getIntent();//recuperarmos el diccionario
+
+        String nom = mi_super_intento.getStringExtra("LaMevaKey"); // leemos la key y asignamos si valor a un objeto string
+
+        TextView nouView = new TextView(this);
+        nouView.setTextSize(40.0f);
+        nouView.setText(nom);
+
+
+        setContentView(nouView);
+
+
+
+        //setContentView(R.layout.activity_main_activity2);
     }
 
 
